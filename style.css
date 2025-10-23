@@ -294,3 +294,90 @@ body.dark .switch::before {
     left: 88px;
     width: calc(100% - 88px);
 }
+
+.conteudo {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo.ativo {
+    display: block;
+    opacity: 1;
+}
+
+/* =====================
+   DASHBOARD PRINCIPAL
+===================== */
+
+#dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.dashboard-container {
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.welcome-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+/* GRID DOS CARDS */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* ESTILO DOS CARDS */
+.card {
+    background: var(--sidebar-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card .number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
