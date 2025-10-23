@@ -8,13 +8,23 @@
 }
 
 :root {
-    /*Colors*/
-    --body-color: #e4e9f7;
-    --sidebar-color: #fff;
-    --primary-color: #695cfe;
-    --primary-color-light: #f6f5ff;
+    /* Cores do tema claro */
+    --cor-fundo: #ffffff;
+    /* Cor de fundo principal - rosa suave */
+    --cor-texto: #000000;
+    /* Cor do texto geral - preto */
+    --cor-botao: #bbbbbb;
+    /* Cor dos botões e elementos interativos - rosa médio */
+    --cor-botao-texto: #000000;
+    /* Cor do texto dos botões - preto */
+    --cor-tom-claro: #ffffff;
+    /* Cor de fundo da sidebar e cards - rosa claro */
+    --cor-botao-light: #f6f5ff;
+    /* Cor de fundo para elementos interativos - branco violeta */
     --toggle-color: #ddd;
-    --text-color: #707070;
+    /* Cor do switch de tema - cinza claro */
+
+
 
     --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -22,18 +32,52 @@
     --tran-05: all 0.5s ease;
 }
 
+.tema-rosa {
+    /* Cores do tema claro */
+    --cor-fundo: #ffcbcd;
+    /* Cor de fundo principal - rosa suave */
+    --cor-texto: #000000;
+    /* Cor do texto geral - preto */
+    --cor-botao: #ff7a7a;
+    /* Cor dos botões e elementos interativos - rosa médio */
+    --cor-botao-texto: #000000;
+    /* Cor do texto dos botões - preto */
+    --cor-tom-claro: #fae4e5;
+    /* Cor de fundo da sidebar e cards - rosa claro */
+    --cor-botao-light: #f6f5ff;
+    /* Cor de fundo para elementos interativos - branco violeta */
+    --toggle-color: #ff7a7a;
+    /* Cor do switch de tema - cinza claro */
+
+}
+
+.tema-cinza {
+    --cor-fundo: #ebebeb;
+    --cor-texto: #000000;
+    --cor-botao: #bbbbbb;
+    --cor-botao-texto: #000000;
+    --cor-tom-claro: #ffffff;
+}
+
 body.dark {
-    --body-color: #18191a;
-    --sidebar-color: #242526;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
+    /* Cores do tema escuro */
+    --cor-fundo: #18191a;
+    /* Cor de fundo principal - cinza muito escuro */
+    --cor-tom-claro: #242526;
+    /* Cor da sidebar e cards - cinza escuro */
+    --cor-botao: #3a3b3c;
+    /* Cor dos botões - cinza médio */
+    --cor-botao-light: #3a3b3c;
+    /* Cor dos elementos interativos - mesmo cinza dos botões */
     --toggle-color: #fff;
-    --text-color: #ccc;
+    /* Cor do switch de tema - branco */
+    --cor-texto: #ccc;
+    /* Cor do texto geral - cinza claro */
 }
 
 body {
     height: 100vh;
-    background: var(--body-color);
+    background: var(--cor-fundo);
     transition: var(--tran-05)
 }
 
@@ -45,7 +89,7 @@ body {
     height: 100%;
     width: 250px;
     padding: 10px 14px;
-    background: var(--sidebar-color);
+    background: var(--cor-tom-claro);
     transition: var(--tran-05);
     z-index: 100;
 }
@@ -58,7 +102,7 @@ body {
 .sidebar .text {
     font-size: 16px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--cor-texto);
     transition: var(--tran-04);
     white-space: nowrap;
     opacity: 1;
@@ -109,12 +153,12 @@ header .image-text .header-text {
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
-    background: var(--primary-color);
+    background: var(--cor-botao);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--sidebar-color);
+    color: var(--cor-tom-claro);
     font-size: 22px;
     transition: var(--tran-03);
 }
@@ -124,7 +168,7 @@ header .image-text .header-text {
 }
 
 body.dark .sidebar header .toggle {
-    color: var(--text-color);
+    color: var(--cor-texto);
 }
 
 .sidebar .menu {
@@ -150,7 +194,7 @@ body.dark .sidebar header .toggle {
 
 .sidebar li .icon,
 .sidebar li .icon {
-    color: var(--text-color);
+    color: var(--cor-texto);
     transition: var(--tran-02);
 }
 
@@ -165,22 +209,22 @@ body.dark .sidebar header .toggle {
 }
 
 .sidebar li a:hover {
-    background: var(--primary-color);
+    background: var(--cor-botao);
 }
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-    color: var(--sidebar-color)
+    color: var(--cor-tom-claro)
 }
 
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text {
-    color: var(--text-color)
+    color: var(--cor-texto)
 }
 
 
 .sidebar .search-box {
-    background: var(--primary-color-light);
+    background: var(--cor-botao-light);
     border-radius: 6px;
     transition: var(--tran-05);
 }
@@ -193,7 +237,7 @@ body.dark .sidebar li a:hover .text {
     border-radius: 6px;
     font-size: 16px;
     font-weight: 500;
-    background: var(--primary-color-light);
+    background: var(--cor-botao-light);
     transition: var(--tran-05);
 }
 
@@ -208,7 +252,7 @@ body.dark .sidebar li a:hover .text {
 .menu-bar .mode {
     position: relative;
     border-radius: 6px;
-    background: var(--primary-color-light);
+    background: var(--cor-botao-light);
 }
 
 .menu-bar .mode .moon-sun {
@@ -245,7 +289,7 @@ body.dark .menu-bar .mode i.bx-moon {
     min-width: 60px;
     cursor: pointer;
     border-radius: 6px;
-    background: var(--primary-color-light);
+    background: var(--cor-botao-light);
 }
 
 .toggle-switch .switch {
@@ -266,7 +310,7 @@ body.dark .menu-bar .mode i.bx-moon {
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    background: var(--sidebar-color);
+    background: var(--cor-tom-claro);
     transition: var(--tran-03);
 }
 
@@ -279,7 +323,7 @@ body.dark .switch::before {
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background: var(--body-color);
+    background: var(--cor-fundo);
     transition: var(--tran-05);
 }
 
@@ -287,7 +331,7 @@ body.dark .switch::before {
     font-size: 30px;
     font-weight: 500;
     padding: 8px 40px;
-    color: var(--text-color);
+    color: var(--cor-texto);
 }
 
 .sidebar.close~.home {
@@ -315,7 +359,7 @@ body.dark .switch::before {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: var(--body-color);
+    background: var(--cor-fundo);
     transition: var(--tran-05);
 }
 
@@ -328,7 +372,7 @@ body.dark .switch::before {
 .welcome-text {
     font-size: 2.2rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--cor-texto);
     margin-bottom: 40px;
 }
 
@@ -341,8 +385,8 @@ body.dark .switch::before {
 
 /* ESTILO DOS CARDS */
 .card {
-    background: var(--sidebar-color);
-    color: var(--text-color);
+    background: var(--cor-tom-claro);
+    color: var(--cor-texto);
     border-radius: 15px;
     padding: 30px 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -360,7 +404,7 @@ body.dark .switch::before {
 
 .card .icon {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--cor-texto);
     margin-bottom: 10px;
 }
 
@@ -372,7 +416,7 @@ body.dark .switch::before {
 .card .number {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--cor-texto);
 }
 
 /* Responsividade */

@@ -5,6 +5,8 @@ const body = document.querySelector("body"),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
 
+// Variável para guardar a classe anterior do body
+let previousBodyClass = body.className;
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 })
@@ -14,11 +16,14 @@ searchBtn.addEventListener("click", () => {
 })
 
 modeSwitch.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    if (body.classList.contains("dark")) {
+    if (!body.classList.contains("dark")) {
+        // Salva a classe anterior antes de ativar o dark mode
+        previousBodyClass = body.className;
+        body.className = "dark";
         modeText.innerText = "Light mode";
     } else {
+        // Restaura a classe anterior ao desativar o dark mode
+        body.className = previousBodyClass;
         modeText.innerText = "Dark mode";
     }
 })
